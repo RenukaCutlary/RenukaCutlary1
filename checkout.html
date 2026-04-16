@@ -193,7 +193,7 @@
     async function handleOnlinePayment() {
       if (currentItemsTotal <= 0) { alert("Cart empty"); return false; }
       try {
-        const response = await fetch("http://localhost:5000/api/payment/create-order", {
+        const response = await fetch("https://my-backend1-2-zz2k.onrender.com/api/payment/create-order", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ amount: currentOrderTotal })
@@ -206,7 +206,7 @@
           name: "Renuka Ketlary",
           order_id: order.id,
           handler: async function(resp) {
-            const verify = await fetch("http://localhost:5000/api/payment/verify-payment", {
+            const verify = await fetch("https://my-backend1-2-zz2k.onrender.com/api/payment/verify-payment", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(resp)

@@ -5,7 +5,7 @@ document.getElementById("sendOtpBtn").addEventListener("click", async function (
         return;
     }
 
-    const res = await fetch("http://localhost:5000/send-otp", {
+    const res = await fetch("https://my-backend1-2-zz2k.onrender.com/send-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email })
@@ -23,7 +23,7 @@ document.getElementById("verifyOtpBtn").addEventListener("click", async function
     const email = document.getElementById("email").value;
     const otp = document.getElementById("otpInput").value;
 
-    const res = await fetch("http://localhost:5000/verify-otp", {
+    const res = await fetch("https://my-backend1-2-zz2k.onrender.com/verify-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, otp })
