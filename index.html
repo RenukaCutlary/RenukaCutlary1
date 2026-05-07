@@ -8,13 +8,13 @@
     <meta name="description" content="Renuka Ketlary - High quality sarees, dress materials and cosmetics." />
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    c
+    
 </head>
 <body>
     <header>
         <div class="navigator">
             <div class="nav-bar">
-                <img class="logo" src="ChatGPT Image Oct 28, 2025, 10_45_34 AM.png" alt="Logo">
+                <img class="logo" src="ChatGPT Image Oct 28, 2025, 10_45_34 AM.png " alt="Logo">
                 <ul class="menu-links">
                     <input type="checkbox" id="check">
                     <span class="menu">
@@ -25,10 +25,12 @@
                                 <li><a href="Saree.html">Saree</a></li>
                                 <li><a href="Cosmetics.html">Cosmetics</a></li>
                                 <li><a href="Dress.html">Dress Materials</a></li>
+                                
                             </ul>
                         </li>
                         <li><a href="Contact.html">Contact</a></li>
                         <li><a href="lookbook.html">Lookbook</a></li>
+                        <li><a href="wishlist.html"> Wishlist</a></li>
                         <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
                     </span>
                     <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
@@ -64,7 +66,7 @@
     <script>
         window.handleProfileIconClick = function() {
             const isLoggedIn = localStorage.getItem("isLoggedIn");
-            window.location.href = isLoggedIn === "true" ? "profile.html" : "login.html";
+            window.location.href = isLoggedIn === "true" ? "Profile.html" : "login.html";
         };
     </script>
 
@@ -100,7 +102,9 @@
         // Hero slider & scroll animation
         const hero = document.querySelector('.hero1');
         if (hero) {
-            const images = ['url("https://placehold.co/1920x600/f9f3ec/8b5a2b?text=Banner+1")','url("https://placehold.co/1920x600/fefaf7/b1624b?text=Banner+2")','url("https://placehold.co/1920x600/f8f0e5/8b4513?text=Banner+3")'];
+            const images = ['url("https://static.vecteezy.com/system/resources/previews/029/783/765/large_2x/collection-of-makeup-products-and-brushes-glamorous-beauty-essentials-free-photo.jpg")',
+            'url("https://okcredit-blog-images-prod.storage.googleapis.com/2021/03/shutterstock_549956632.jpg")',
+            'url("https://tse4.mm.bing.net/th/id/OIP.vOtdaRN7ogZWAxROZk2vCwHaHa?pid=Api&P=0&h=180")'];
             let index = 0;
             setInterval(() => { index = (index+1)%images.length; hero.style.backgroundImage = images[index]; }, 2500);
         }

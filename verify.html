@@ -22,7 +22,7 @@ function verifyOTP() {
   const otp = document.getElementById("otp").value;
   const email = localStorage.getItem("email");
 
-  fetch("http://localhost:5000/verify-otp", {
+  fetch("https://my-backend1-2-zz2k.onrender.com/verify-otp", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

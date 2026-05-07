@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title> Dress Collection</title>
+    <title> Dress Collection | Elysian</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
+        /* ========== YOUR EXISTING STYLES (KEPT EXACTLY) ========== */
         * {
             margin: 0;
             padding: 0;
@@ -19,7 +20,6 @@
             scroll-behavior: smooth;
         }
 
-        /* ===== NAVIGATION ===== */
         .navigator {
             background: rgba(255, 252, 245, 0.98);
             backdrop-filter: blur(12px);
@@ -136,7 +136,6 @@
             }
         }
 
-        /* ===== MAIN PAGE ===== */
         .page {
             max-width: 1400px;
             margin: 0 auto;
@@ -168,16 +167,10 @@
             margin-top: 6px;
         }
 
-        /* ===== PRODUCT GRID ===== */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
             gap: 2rem;
-            opacity: 1;
-        }
-
-        .grid.hidden {
-            opacity: 1;
         }
 
         .card {
@@ -249,10 +242,6 @@
             color: #f5b342;
             font-size: 0.9rem;
             letter-spacing: 2px;
-        }
-
-        .star-empty {
-            color: #ddd2c4;
         }
 
         .review-count {
@@ -328,7 +317,6 @@
             color: #b45f3b;
         }
 
-        /* ===== FOOTER ===== */
         .site-footer {
             background: #191411;
             color: #e7dfd7;
@@ -400,7 +388,6 @@
             opacity: 0.7;
         }
 
-        /* ===== TOAST NOTIFICATION ===== */
         .toast-message {
             position: fixed;
             bottom: 30px;
@@ -436,7 +423,6 @@
             }
         }
 
-        /* card animation */
         .card {
             animation: fadeUp 0.5s ease backwards;
         }
@@ -470,6 +456,7 @@
                     <li><a href="Products.html">Our Products</a></li>
                     <li><a href="Contact.html">Contact</a></li>
                     <li><a href="lookbook.html">Lookbook</a></li>
+                    <li><a href="wishlist.html">❤️ Wishlist</a></li>
                     <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
                 </span>
                 <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
@@ -496,95 +483,8 @@
         <p class="subhead">Ethnic elegance • contemporary silhouettes</p>
     </header>
 
-    <section class="grid" aria-label="Dresses grid">
-        <!-- Product 1 - Mayuri Bandhani -->
-        <article class="card" data-name="Mayuri Bandhani Dress" data-price="1099">
-            <div class="media">
-                <a href="colours.html">
-                    <img class="dressimg" src="dress1.jpeg" alt="Mayuri Bandhani Dress">
-                </a>
-            </div>
-            <div class="card-body">
-                <div class="product-info">
-                    <h2 class="product-title">Mayuri Bandhani</h2>
-                    <div class="rating">
-                        <span class="stars">★★★★☆</span>
-                        <span class="review-count">(124)</span>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <!-- Product 2 - Floral A-Line 
-        <article class="card" data-name="Floral A-Line Dress" data-price="1099">
-            <div class="media">
-                <a href="colours2.html">
-                    <img class="dressimg" src="https://placehold.co/600x800/dac2ab/c18457?text=Floral+A-Line" alt="Floral Dress">
-                </a>
-            </div>
-            <div class="card-body">
-                <div class="product-info">
-                    <h2 class="product-title">Gulmohar Floral</h2>
-                    <div class="rating">
-                        <span class="stars">★★★★☆</span>
-                        <span class="review-count">(89)</span>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-    -->    <!-- Product 3 - Ikat Print 
-        <article class="card" data-name="Ikat Print Dress" data-price="1099">
-            <div class="media">
-                <a href="colours3.html">
-                    <img class="dressimg" src="https://placehold.co/600x800/e7cfb9/d0875a?text=Ikat+Print" alt="Ikat Dress">
-                </a>
-            </div>
-            <div class="card-body">
-                <div class="product-info">
-                    <h2 class="product-title">Ikat Fusion</h2>
-                    <div class="rating">
-                        <span class="stars">★★★★★</span>
-                        <span class="review-count">(210)</span>
-                    </div>
-                </div>
-            </div>
-        </article>
--->
-        <!-- Product 4 - Block Print Maxi
-        <article class="card" data-name="Block Print Maxi" data-price="1099">
-            <div class="media">
-                <a href="colours4.html">
-                    <img class="dressimg" src="https://placehold.co/600x800/d3baa0/b96f45?text=Block+Print" alt="Block Print Dress">
-                </a>
-            </div>
-            <div class="card-body">
-                <div class="product-info">
-                    <h2 class="product-title">Artisan Block Print</h2>
-                    <div class="rating">
-                        <span class="stars">★★★★☆</span>
-                        <span class="review-count">(76)</span>
-                    </div>
-                </div>
-            </div>
-        </article>
- -->
-        <!-- Product 5 - Linen Pleated 
-        <article class="card" data-name="Linen Pleated Dress" data-price="1099">
-            <div class="media">
-                <a href="colours5.html">
-                    <img class="dressimg" src="https://placehold.co/600x800/e1c9b4/c2855b?text=Linen+Pleated" alt="Linen Dress">
-                </a>
-            </div>
-            <div class="card-body">
-                <div class="product-info">
-                    <h2 class="product-title">Linen Pleated</h2>
-                    
-                </div>
-            </div>
-        </article>-->
-    </section>
+    <!-- Products will be injected here dynamically -->
+    <section class="grid" id="dressesGrid" aria-label="Dresses grid"></section>
 </main>
 
 <footer class="site-footer">
@@ -617,144 +517,255 @@
 
 <div id="dynamicToast" class="toast-message">✨ Added to cart</div>
 
-<script>
-    (function() {
-        // Remove hidden class if any
-        const gridSection = document.querySelector('.grid');
-        if(gridSection && gridSection.classList.contains('hidden')) {
-            gridSection.classList.remove('hidden');
-        }
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-        // Toast notification system
-        const toastEl = document.getElementById('dynamicToast');
-        function showToast(message) {
-            if(toastEl) {
-                toastEl.textContent = message;
-                toastEl.style.opacity = '1';
-                toastEl.style.transform = 'translateX(-50%) scale(1)';
-                setTimeout(() => {
-                    toastEl.style.opacity = '0';
-                    toastEl.style.transform = 'translateX(-50%) scale(0.9)';
-                }, 1800);
-            }
-        }
+    // Firebase config (same as your other pages)
+    const firebaseConfig = {
+        apiKey: "AIzaSyDtWPGZedQ2gwGYGDyJNc4-rM3LbWUsMtY",
+        authDomain: "renukacutlary.firebaseapp.com",
+        projectId: "renukacutlary",
+        storageBucket: "renukacutlary.firebasestorage.app",
+        messagingSenderId: "822608333582",
+        appId: "1:822608333582:web:044c9635805ba5125fa55f"
+    };
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-        // Cart & Wishlist storage helpers
-        function addToCartStorage(productName, price, imageSrc) {
-            let cart = JSON.parse(localStorage.getItem('dress_cart') || '[]');
-            cart.push({
-                id: Date.now(),
-                name: productName,
-                price: price,
-                image: imageSrc,
-                quantity: 1,
-                timestamp: new Date().toISOString()
-            });
-            localStorage.setItem('dress_cart', JSON.stringify(cart));
+    // ---------- DRESS PRODUCT CATALOG ----------
+    const dressCatalog = [
+        {
+            id: "mayuri_bandhani",
+            name: "Mayuri Bandhani",
+            originalPrice: 1499,
+            salePrice: 1099,
+            currency: "RS",
+            rating: 4,
+            reviews: 124,
+            image: "dress1.jpeg",
+            fallbackImage: "https://placehold.co/600x800/e2cfbb/b56136?text=Mayuri+Bdetails+",
+            link: "colours.html"
+        },
+        {
+            id: "gulmohar_floral",
+            name: "Gulmohar Floral",
+            originalPrice: 1599,
+            salePrice: 1199,
+            currency: "RS",
+            rating: 4,
+            reviews: 89,
+            image: "https://placehold.co/600x800/dac2ab/c18457?text=Floral",
+            fallbackImage: "https://placehold.co/600x800/dac2ab/c18457?text=Gulmohar",
+            link: "colours2.html"
+        },
+        {
+            id: "ikat_fusion",
+            name: "Ikat Fusion",
+            originalPrice: 1799,
+            salePrice: 1299,
+            currency: "RS",
+            rating: 5,
+            reviews: 210,
+            image: "https://placehold.co/600x800/e7cfb9/d0875a?text=Ikat",
+            fallbackImage: "https://placehold.co/600x800/e7cfb9/d0875a?text=Ikat+Fusion",
+            link: "colours3.html"
+        },
+        {
+            id: "artisan_block",
+            name: "Artisan Block Print",
+            originalPrice: 1699,
+            salePrice: 1199,
+            currency: "RS",
+            rating: 4,
+            reviews: 76,
+            image: "https://placehold.co/600x800/d3baa0/b96f45?text=Block+Print",
+            fallbackImage: "https://placehold.co/600x800/d3baa0/b96f45?text=Block+Print",
+            link: "colours4.html"
+        },
+        {
+            id: "linen_pleated",
+            name: "Linen Pleated",
+            originalPrice: 1999,
+            salePrice: 1499,
+            currency: "RS",
+            rating: 4,
+            reviews: 112,
+            image: "https://placehold.co/600x800/e1c9b4/c2855b?text=Linen",
+            fallbackImage: "https://placehold.co/600x800/e1c9b4/c2855b?text=Linen+Pleated",
+            link: "colours5.html"
         }
+    ];
 
-        function addToWishlistStorage(productName) {
-            let wish = JSON.parse(localStorage.getItem('dress_wishlist') || '[]');
-            if(!wish.includes(productName)) {
-                wish.push(productName);
-                localStorage.setItem('dress_wishlist', JSON.stringify(wish));
-            }
+    let currentUid = null;
+
+    // Wishlist key per user (separate from saree wishlist)
+    function getWishlistKey() {
+        return currentUid ? `dress_wishlist_${currentUid}` : null;
+    }
+
+    function getWishlist() {
+        const key = getWishlistKey();
+        if (!key) return [];
+        const stored = localStorage.getItem(key);
+        return stored ? JSON.parse(stored) : [];
+    }
+
+    function saveWishlist(wishlistArray) {
+        const key = getWishlistKey();
+        if (key) {
+            localStorage.setItem(key, JSON.stringify(wishlistArray));
+            // Notify other pages (profile, wishlist page) about the change
+            window.dispatchEvent(new StorageEvent('storage', { key: key, newValue: JSON.stringify(wishlistArray) }));
         }
+    }
 
-        // Process each product card
-        const allCards = document.querySelectorAll('.card');
-        allCards.forEach(card => {
-            // Extract product details
-            const titleElem = card.querySelector('.product-title');
-            const priceElem = card.querySelector('.new-price');
-            const imgElem = card.querySelector('.dressimg');
-            
-            let productName = titleElem ? titleElem.innerText.trim() : 'Dress';
-            let priceText = priceElem ? priceElem.innerText.replace('RS.', '').replace(/[^0-9.]/g, '') : '1099';
-            let productPrice = parseFloat(priceText) || 1099;
-            let productImage = imgElem ? imgElem.src : '';
-            
-            // Override with dataset if present
-            if(card.dataset.name) productName = card.dataset.name;
-            if(card.dataset.price) productPrice = parseFloat(card.dataset.price);
-            
-            // Add to Cart button
-            const cartBtn = card.querySelector('.btn-cart');
-            if(cartBtn) {
-                const newCartBtn = cartBtn.cloneNode(true);
-                cartBtn.parentNode.replaceChild(newCartBtn, cartBtn);
-                newCartBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    showToast(`🛍️ ${productName} added · ₹${productPrice.toFixed(2)}`);
-                    addToCartStorage(productName, productPrice, productImage);
-                    
-                    // Animate button
-                    const icon = newCartBtn.querySelector('i');
-                    if(icon) {
-                        icon.classList.remove('fa-shopping-bag');
-                        icon.classList.add('fa-check');
-                        setTimeout(() => {
-                            icon.classList.remove('fa-check');
-                            icon.classList.add('fa-shopping-bag');
-                        }, 800);
-                    }
-                });
-            }
-            
-            // Wishlist button
-            const wishBtn = card.querySelector('.btn-wishlist');
-            if(wishBtn) {
-                const newWishBtn = wishBtn.cloneNode(true);
-                wishBtn.parentNode.replaceChild(newWishBtn, wishBtn);
-                newWishBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    showToast(`❤️ ${productName} saved to wishlist`);
-                    addToWishlistStorage(productName);
-                    
-                    const heartIcon = newWishBtn.querySelector('i');
-                    if(heartIcon) {
-                        heartIcon.classList.remove('far');
-                        heartIcon.classList.add('fas', 'fa-heart');
-                        setTimeout(() => {
-                            heartIcon.classList.remove('fas', 'fa-heart');
-                            heartIcon.classList.add('far');
-                        }, 1000);
-                    }
-                });
-            }
+    function isInWishlist(productId) {
+        return getWishlist().includes(productId);
+    }
+
+    function toggleWishlist(productId) {
+        let wishlist = getWishlist();
+        const exists = wishlist.includes(productId);
+        if (exists) {
+            wishlist = wishlist.filter(id => id !== productId);
+        } else {
+            wishlist.push(productId);
+        }
+        saveWishlist(wishlist);
+        return !exists; // true = added, false = removed
+    }
+
+    // Cart storage (separate key for dresses)
+    function addToCartStorage(productName, price, imageSrc) {
+        let cart = JSON.parse(localStorage.getItem('dress_cart') || '[]');
+        cart.push({
+            id: Date.now(),
+            name: productName,
+            price: price,
+            image: imageSrc,
+            quantity: 1,
+            timestamp: new Date().toISOString()
         });
-        
-        // Fix any broken images with fallback
-        const allImages = document.querySelectorAll('.dressimg');
-        allImages.forEach(img => {
-            img.addEventListener('error', function() {
-                if(!this.dataset.fixed) {
-                    this.dataset.fixed = 'true';
-                    this.src = 'https://placehold.co/600x800/f2e2d4/c2835a?text=Ethnic+Dress';
+        localStorage.setItem('dress_cart', JSON.stringify(cart));
+    }
+
+    // Toast notification
+    const toastEl = document.getElementById('dynamicToast');
+    function showToast(message) {
+        if (toastEl) {
+            toastEl.textContent = message;
+            toastEl.style.opacity = '1';
+            toastEl.style.transform = 'translateX(-50%) scale(1)';
+            setTimeout(() => {
+                toastEl.style.opacity = '0';
+                toastEl.style.transform = 'translateX(-50%) scale(0.9)';
+            }, 1800);
+        }
+    }
+
+    // Render products dynamically
+    function renderProducts() {
+        const container = document.getElementById('dressesGrid');
+        if (!container) return;
+        const wishlist = getWishlist();
+
+        let html = '';
+        dressCatalog.forEach(product => {
+            const isFilled = wishlist.includes(product.id);
+            const heartClass = isFilled ? 'fas fa-heart' : 'far fa-heart';
+            const starsFull = '★'.repeat(product.rating);
+            const starsEmpty = '☆'.repeat(5 - product.rating);
+            const starsHtml = `<span class="stars">${starsFull}${starsEmpty}</span>`;
+
+            html += `
+                <article class="card" data-id="${product.id}">
+                    <div class="media">
+                        <a href="${product.link}">
+                            <img class="dressimg" src="${product.image}" alt="${product.name}" 
+                                 onerror="this.src='${product.fallbackImage}'">
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-info">
+                            <h2 class="product-title">${product.name}</h2>
+                            <div class="rating">
+                                ${starsHtml}
+                                <span class="review-count">(${product.reviews})</span>
+                            </div>
+                            <div class="price">
+                                <span class="old-price">${product.currency}. ${product.originalPrice.toFixed(2)}</span>
+                                <span class="new-price">${product.currency}. ${product.salePrice.toFixed(2)}</span>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <button class="btn-cart" data-id="${product.id}"><i class="fas fa-shopping-bag"></i> Add to Cart</button>
+                            <button class="btn-wishlist" data-id="${product.id}"><i class="${heartClass}"></i></button>
+                        </div>
+                    </div>
+                </article>
+            `;
+        });
+        container.innerHTML = html;
+
+        // Attach cart event listeners
+        document.querySelectorAll('.btn-cart').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const card = btn.closest('.card');
+                const productId = card.dataset.id;
+                const product = dressCatalog.find(p => p.id === productId);
+                if (product) {
+                    showToast(`🛍️ ${product.name} added · ${product.currency} ${product.salePrice}`);
+                    addToCartStorage(product.name, product.salePrice, product.image);
+                    // Animate icon
+                    const icon = btn.querySelector('i');
+                    icon.classList.remove('fa-shopping-bag');
+                    icon.classList.add('fa-check');
+                    setTimeout(() => {
+                        icon.classList.remove('fa-check');
+                        icon.classList.add('fa-shopping-bag');
+                    }, 800);
                 }
             });
         });
-        
-        // Ensure prices are properly formatted (no extra decimals)
-        document.querySelectorAll('.new-price').forEach(priceSpan => {
-            let raw = priceSpan.innerText.replace(/[^0-9.]/g, '');
-            let num = parseFloat(raw);
-            if(!isNaN(num) && raw.length > 0) {
-                priceSpan.innerText = `RS. ${num.toLocaleString('en-IN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-            }
+
+        // Attach wishlist event listeners
+        document.querySelectorAll('.btn-wishlist').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const productId = btn.dataset.id;
+                const product = dressCatalog.find(p => p.id === productId);
+                const added = toggleWishlist(productId);
+                const icon = btn.querySelector('i');
+                if (added) {
+                    icon.className = 'fas fa-heart';
+                    showToast(`❤️ ${product.name} added to wishlist`);
+                } else {
+                    icon.className = 'far fa-heart';
+                    showToast(`💔 ${product.name} removed from wishlist`);
+                }
+            });
         });
-        
-        document.querySelectorAll('.old-price').forEach(oldSpan => {
-            let rawOld = oldSpan.innerText.replace(/[^0-9.]/g, '');
-            let numOld = parseFloat(rawOld);
-            if(!isNaN(numOld)) {
-                oldSpan.innerText = `RS. ${numOld.toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
-            }
-        });
-        
-        console.log('Dress collection page fully customized: interactive cart/wishlist, modern styling, responsive grid');
-    })();
+    }
+
+    // Firebase Auth: wait for user, then render
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            // Redirect to login if not authenticated (same as other pages)
+            window.location.href = "login.html";
+            return;
+        }
+        currentUid = user.uid;
+        renderProducts();
+    });
+
+    // Optional: listen for storage events to update wishlist if changed from another tab (e.g., profile page)
+    window.addEventListener('storage', (event) => {
+        if (event.key === getWishlistKey()) {
+            renderProducts(); // re-render to update heart icons
+        }
+    });
 </script>
 </body>
 </html>

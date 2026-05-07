@@ -6,6 +6,7 @@
     <title>My Profile | RenukaKetlary</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
+        /* (keep all your existing CSS exactly as it was) */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -253,12 +254,27 @@
 
         let currentUid = null;
 
-        // Helper: get storage key for current user
         function getUserKey(baseKey) {
             return currentUid ? `${baseKey}_${currentUid}` : null;
         }
 
-        // Load user data from localStorage (user-scoped)
+        // NEW: read wishlist from per‑user array
+        function getWishlistCount() {
+            const key = getUserKey('saree_wishlist');
+            if (!key) return 0;
+            const stored = localStorage.getItem(key);
+            const wishlist = stored ? JSON.parse(stored) : [];
+            return wishlist.length;
+        }
+
+        function updateWishlistCountUI() {
+    const sareeKey = getUserKey('saree_wishlist');
+    const dressKey = getUserKey('dress_wishlist');
+    const sareeWish = sareeKey ? (JSON.parse(localStorage.getItem(sareeKey) || '[]')).length : 0;
+    const dressWish = dressKey ? (JSON.parse(localStorage.getItem(dressKey) || '[]')).length : 0;
+    document.getElementById("wishlistCount").textContent = sareeWish + dressWish;
+}
+
         function loadUserData(user) {
             currentUid = user.uid;
             const profile = JSON.parse(localStorage.getItem(getUserKey('profile')) || '{}');
@@ -273,12 +289,13 @@
             document.getElementById("showEmail").textContent = email;
             document.getElementById("showPhone").textContent = phone;
             document.getElementById("showAddress").textContent = address;
+            localStorage.setItem("customerAddress", address);
             document.getElementById("memberSince").textContent = memberSince;
             if (image) document.getElementById("profileImage").src = image;
             
-            // Stats (also per user)
+            // Orders & reviews remain as before
             document.getElementById("orderCount").textContent = localStorage.getItem(getUserKey('orderCount')) || "0";
-            document.getElementById("wishlistCount").textContent = localStorage.getItem(getUserKey('wishlistCount')) || "0";
+            updateWishlistCountUI();
             document.getElementById("reviewCount").textContent = localStorage.getItem(getUserKey('reviewCount')) || "0";
             
             if (!profile.memberSince) {
@@ -295,13 +312,20 @@
             }
         });
 
+        // Listen for wishlist changes from other tabs/pages
+        window.addEventListener("storage", (event) => {
+            if (event.key === getUserKey('saree_wishlist')) {
+                updateWishlistCountUI();
+            }
+        });
+
         window.saveProfile = function() {
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
             const phone = document.getElementById("phone").value;
             const address = document.getElementById("address").value;
             const image = document.getElementById("profileImage").src;
-            
+
             const profile = {
                 name: name || document.getElementById("showName").textContent,
                 email: email || document.getElementById("showEmail").textContent,
@@ -310,17 +334,19 @@
                 image: image,
                 memberSince: document.getElementById("memberSince").textContent
             };
+
             localStorage.setItem(getUserKey('profile'), JSON.stringify(profile));
-            
             document.getElementById("showName").textContent = profile.name;
             document.getElementById("showEmail").textContent = profile.email;
             document.getElementById("showPhone").textContent = profile.phone;
             document.getElementById("showAddress").textContent = profile.address;
-            
+            localStorage.setItem("customerAddress", profile.address);
+
             const user = auth.currentUser;
             if (user && name && name !== user.displayName) {
                 updateProfile(user, { displayName: name }).catch(console.error);
             }
+
             alert("Profile updated!");
             closeEdit();
         };
@@ -334,6 +360,7 @@
             document.getElementById("editProfileImage").src = document.getElementById("profileImage").src;
             document.getElementById("editModal").style.display = "block";
         };
+
         window.closeEdit = () => document.getElementById("editModal").style.display = "none";
         window.openFile = () => document.getElementById("imageInput").click();
         

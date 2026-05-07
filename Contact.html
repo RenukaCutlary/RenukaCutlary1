@@ -292,6 +292,13 @@
       cursor: not-allowed;
       transform: none;
     }
+    .map-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
 
     /* responsive */
     @media (max-width: 880px) {
@@ -366,10 +373,20 @@
             <div>
               <h4>Call / SMS</h4>
               <a href="tel:+11234567890">+91 9408090552 </a>
-              <p>Mon-Fri, 10am – 8pm </p>
+              <p>Mon-Sun, 10am – 9pm </p>
             </div>
           </div>
         </div>
+        <div class="map-container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3692.046034201171!2d73.22996957506854!3d22.27624597970397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc50bcc4db25f%3A0x7e48e7127390ba6a!2sRajendra%20Auto%20Garage!5e0!3m2!1sen!2sin!4v1777198730563!5m2!1sen!2sin" 
+    width="600" 
+    height="450" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
 
         <div class="social-links">
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -422,7 +439,26 @@
   </div>
 </div>
 
+
 <script>
+  // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDtWPGZedQ2gwGYGDyJNc4-rM3LbWUsMtY",
+  authDomain: "renukacutlary.firebaseapp.com",
+  databaseURL: "https://renukacutlary-default-rtdb.firebaseio.com",
+  projectId: "renukacutlary",
+  storageBucket: "renukacutlary.firebasestorage.app",
+  messagingSenderId: "822608333582",
+  appId: "1:822608333582:web:044c9635805ba5125fa55f"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
   (function() {
     // DOM elements
     const form = document.getElementById('contactForm');
